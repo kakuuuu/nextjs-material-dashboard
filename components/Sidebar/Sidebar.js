@@ -4,6 +4,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -92,7 +93,7 @@ export default function Sidebar(props) {
         target="_blank"
       >
         <div className={classes.logoImage}>
-          <img src={logo} alt="logo" className={classes.img} />
+          <Image src={logo} alt="logo" className={classes.img} />
         </div>
         {logoText}
       </a>

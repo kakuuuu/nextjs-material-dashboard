@@ -1,13 +1,21 @@
-const withPlugins = require("next-compose-plugins");
-const withImages = require("next-images");
-const withSass = require("@zeit/next-sass");
-const withCSS = require("@zeit/next-css");
-const webpack = require("webpack");
 const path = require("path");
 
-module.exports = withPlugins([[withSass], [withImages], [withCSS]], {
-  webpack(config, options) {
+const defaultConfig = {};
+
+const nextConfig = {
+  /* config options here */
+  webpack: (
+    config,
+    { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
+  ) => {
     config.resolve.modules.push(path.resolve("./"));
-    return config;
+    // Important: return the modified config
+    const plugins = [];
+    return plugins.reduce((acc, plugin) => plugin(acc), {
+      ...defaultConfig,
+      ...config,
+    });
   },
-});
+};
+
+module.exports = nextConfig;
