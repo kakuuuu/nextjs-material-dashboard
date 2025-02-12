@@ -74,6 +74,11 @@ Quick start options:
 - [Download from Github](https://github.com/creativetimofficial/nextjs-material-dashboard/archive/master.zip).
 - [Download from Creative Tim](https://www.creative-tim.com/product/nextjs-material-dashboard).
 
+can use
+Node v14.21.3
+npm v6.14.18
+node-gyp v11.1.0
+
 ## Documentation
 
 The documentation for the Material Dashboard React is hosted at our [website](https://www.creative-tim.com/learning-lab/nextjs/overview/material-dashboard).
